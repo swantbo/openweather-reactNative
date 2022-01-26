@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import CityCard from '../components/CityCard';
+// import { API_KEY } from "@env"
 import { colors } from '../constants/color';
 import {useGlobalContext} from "../context"
 
 
 const Home = ({navigation}) => {
-  const {cities} = useGlobalContext()
+  const {cities} = useGlobalContext()  // geting from /context
+  // console.log(API_KEY)
 
   const showSingleCity = (city) => {  // move on 7 days weather of city's screen
     navigation.navigate("SingleCity", {city})
